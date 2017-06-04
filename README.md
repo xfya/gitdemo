@@ -22,3 +22,5 @@ git push  2017
 
 git  remote  
 
+git  merge
+
