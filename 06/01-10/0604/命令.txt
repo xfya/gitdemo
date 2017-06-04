@@ -1,0 +1,50 @@
+# 命令
+## windows mac linux
+> shell(壳)
+
+## 命令的本质
+> 就是在shell中写一些单词，然后回车，让电脑执行相应的操作
+> 其实也是执行的电脑上的一些文件
+> cmd, bash， 骇客帝国中的命令窗口
+> (git bash),这个是git这个工具自带的，我们就用它来写命令!
+
+## 进入到某个文件夹
+cd: change Directory
++ `cd [文件夹路径]`
+
+## 命令组成
+`命令名 【参数】`
+
+例: shtudown -s -t 0
+
+## 文件/文件夹/操作
+- 创建文件夹
+  + mkdir (make Directory)
+  + `mkdir test` // 新建test文件
+
+- 创建文件
+  + touch
+  + `touch a.xt` 新建 名为 a.xt 的文件
+
+- 删除文件及文件夹
+  + rm 文件名
+  + `rm ./a.txt`
+  + `rm *.js`
+
+- 删除文件夹
+  + rm -r 文件夹名
+  + `rm -r ./qianduo`
+  + `rm -rf ./qianduo` // 多了个f, 就是没有提示，能删除的就直接删除
+
+- 移动文件
+  + mv (move)
+  + `mv 文件名  新的文件路径`
+  + `mv ./a.txt  ../dd` // 移动到上级的dd文件夹中
+  
+
+- 复制文件
+  + cp (copy)
+  + `cp 文件名  新的文件名(包含路径)`
+  + `cp ./a/b.txt  ./dd/fff.txt` // 复制 ./a/b.txt文件， 得到到 ./dd目录，新文件名为fff.txt
+
+  alert('hello'),  // 0,1
