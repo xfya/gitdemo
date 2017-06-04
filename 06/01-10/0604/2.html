@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="bower_components/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <aaa></aaa>
+    </div>
+
+    <!--<script>
+        var Aaa = Vue.extend({
+            template: "<h3>fdsfs</h3>"
+        })
+
+        Vue.component("aaa", Aaa);
+        var vm = new Vue({
+            el: "#box",
+            data: {
+                bSign: true
+            }
+        })
+    </script>-->
+    <script>
+        var Aaa = Vue.extend({
+            template: "<h3>eqe --> {{msg}}</h3>",
+            data() {
+                return {
+                    msg: "sfsfsf"
+                }
+            }
+        })
+
+        var vm = new Vue({
+            el: "#box",
+            data: {
+                bSign: true
+            },
+            components: {
+                'aaa': Aaa
+            }
+        })
+    </script>
+
+</body>
+
+</html>
