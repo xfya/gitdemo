@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <!--<div id="box">
+
+        {{msg}}
+    </div>
+    <script>
+        window.onload = function() {
+            new Vue({
+                el: "#box",
+                data: {
+                    msg: "welcome Vue 2.0 "
+                }
+            })
+        }
+    </script>-->
+    <!--<div id="box">
+        <aaa></aaa>
+    </div>
+
+    <template id="aaa">
+        <div>
+            this is my first vue 2.o 
+        </div>
+
+    </template>
+    <script>
+        var Home = {
+            template: "#aaa"
+        }
+        Vue.component("aaa", Home)
+
+        new Vue({
+            el: "#box",
+            data: {
+                msg: "welcome VUe 2.0"
+            }
+        })
+    </script>-->
+    <!--<div id="box">
+        {{msg}}
+        <aaa></aaa>
+    </div>
+
+    <template id="aaa">
+        <div>
+            xaa  
+        </div>
+
+    </template>
+
+    <script>
+        var Home = {
+            template: "#aaa"
+        };
+        Vue.component('aaa', Home);
+        new Vue({
+            el: "#box",
+            data: {
+                msg: "xfa  tet"
+            }
+        })-->
+    <!--</script>-->
+    <!--<aaa></aaa>
+    <template id="aaa">
+        <div>
+            test  --->{{msg}}
+    </div>
+    </template>
+    <script>
+        var Home = {
+            template: "#aaa"
+        }
+
+        window.onload = function() {
+            new Vue({
+                el: "#box",
+                data: {
+                    msg: "xfa elcome "
+                },
+                components: {
+                    'aaa': Home,
+                    data: {
+
+                        msg: "dada"
+
+                    }
+                }
+            })
+        }
+    </script>-->
+    <!--<div id="box">
+
+        <my-aaa></my-aaa>
+    </div>
+    <template id="aaa">
+        <div>
+            <h3>    
+                thos is my first child msg
+            </h3>
+        </div>
+    </template>
+
+    <script>
+        Vue.component("my-aaa", {
+            template: "#aaa"
+        })
+
+        new Vue({
+            el: "#box",
+            data: {
+                msg: "welcome vue 2.0"
+            }
+
+        })
+    </script>-->
+</body>
+
+</html>

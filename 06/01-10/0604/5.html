@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        {{msg}}
+
+    </div>
+    <script>
+        window.onload = function() {
+            new Vue({
+                el: "#box",
+                data: {
+                    msg: "welcome vue 2.3"
+                },
+                beforeCreate() {
+                    console.log('this is my first zu jian ')
+                },
+                created() {
+                    console.log(' shi li  is  created')
+                },
+                beforeCreate() {
+                    console.log('mo ban bina yi zhi  qia ')
+                },
+                mounted() {
+                    console.log('mo ban  is wan chegn ')
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
