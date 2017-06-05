@@ -4,9 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script src="./vue.js"></script>
 </head>
 
 <body>
+    <div id="example">
+        <input type="text" v-model="reversedMessage">
+        <p>Original message: "{{ reversedMessage }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#example",
+            data: {
+                message: "xfa",
+                reversedMessage: "sfsdff"
+            },
+            computed: {
+                reversedMessage() {
+                    // this.message.split("").reverse("").jion("")
+                    return Date.now()
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
 
 </body>
 
