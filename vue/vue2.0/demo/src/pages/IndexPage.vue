@@ -47,6 +47,14 @@
 
 <script>
     export default {
+        created: function() {
+            this.$http.get("http://localhost:8081/getNewsList").then((res) => {
+                console.log(res.data)
+                this.newsList = res.body
+            }, (err) => {
+                console.log(err)
+            })
+        },
 
         data() {
             return {
