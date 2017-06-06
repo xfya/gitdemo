@@ -1,13 +1,19 @@
 <template>
-  <div>
+  <div  class = "w">
       <div class="app-header">
-          app-header
+          <img src="../assets/logo.png" alt="">
+          <div class="login">登录</div>
+          <div class="login">关于</div>
+          <div class="resgiter">注册</div>
       </div>
      
-      <div class="app-header">
-app-header
+      <div class="app-content">
+          <keep-alive>
+                <router-view></router-view>
+          </keep-alive>
+        
       </div>
-       <div class="app-header">
+       <div class="app-fotter">
 app-header
        </div>
  </div> 
@@ -157,5 +163,34 @@ app-header
         border-spacing: 0;
     }
     
-    Previous Versions
+    .app-header {
+        height: 50px;
+        line-height: 50px;
+        background-color: #f8f8f8;
+    }
+    
+    .w {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .app-header>div {
+        float: right;
+        margin-right: 8px;
+    }
+    
+    .app-header .resgiter {
+        float: right;
+    }
+    
+    .app-header img {
+        width: 20px;
+        margin-left: 20px;
+    }
+    
+    .app-fotter {
+        line-height: 50px;
+        background-color: #f8f8f8;
+        text-align: center;
+    }
 </style>
