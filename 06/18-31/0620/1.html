@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    	<script src="node_modules/angular/angular.js"></script>
+
+</head>
+<body  ng-app ="myApp" ng-controller = "demoCtrl">
+<!--
+	<div ng-non-bindable> {{ name }} </div>
+	<div> {{ name }} </div>
+	<div ng-bind="name"></div>
+
+
+
+
+	<div ng-bind-template="{{name}} {{age}}"></div>-->
+	<!--<button ng-class="{'red':isColor,'blue':!isColor}" ng-click="setColor()">button</button>-->
+	<!--<p ng-repeat="item in info" ng-class="{'first':$first,'last':$last}">{{$index+1}} {{ $first }} {{ $last }} {{$middle}} {{ item.name }} </p>-->
+    <ul>
+		<li ng-repeat="item in list">
+			<a href="#">{{item.title}}</a>
+			<div>{{item.description}}</div>
+		</li>
+	</ul>
+    	<div ng-hide="list.length != 0">暂无数据</div>
+	<button ng-click="clearData()">清空数据</button>
+
+
+	<button ng-click="isHideShow = true">按钮1</button>
+	<button ng-click="isHideShow = false">按钮2</button>
+	<div ng-if="isHideShow">按钮1显示的内容</div>
+	<div ng-if="!isHideShow">按钮2显示的内容</div>
+		
+
+
+<script>
+
+angular.module("myApp",[])  
+    .controller("demoCtrl",function($scope){
+        	$scope.isHideShow = true;
+
+            $scope.list = [
+                {
+						id:'1',
+						title:'有人在微信QQ上拉你搞投资？那都是骗子！',
+						description : '喜欢炒股的朋友或许经常在微信或者QQ收到各种“业务员”的推广，有的介绍老师给你，有的介绍私募给你，有的是亲自操刀上阵，通常情况下是在操作获利之后五五分成，在操作一段时间之后，“业务员”会告诉你最近股市不好做，不好赚钱，而“我们有新的业务”，可以快速地获得利润，再给你发一些高收益的截图。'
+					},
+					{
+						id:'2',
+						title:'女子被"男友"骗150万 相处3年不知对方系闺蜜假扮',
+						description : '时报讯 今年2月，杭州市滨江警方接到一起报警，报警人林芬（化名）称2014年至2017年间，自己被男友高鹏（化名）骗了共计150多万元。近日，民警抓获了该案嫌疑人，一看，这高鹏啊，不仅是个女的，还是林芬的闺蜜。'
+					}
+            ]
+
+            	$scope.clearData = function(){
+
+					$scope.list.length = 0;
+
+				}
+    })
+
+
+    // // 定义controller   函数
+
+    // function controller(callback){
+    //     var $scope = {};
+    //     var $timeout = {};
+    //     var str = callback.toString();
+    //     var  arr = str.split(/\(|\)/)[1].split(',');
+    //     console.log(arr)
+    // for(var i = 0 ; i < arr.length;i++){
+    //     switch(arr[i]){
+    //         arr[i] = $scope;
+
+	// 					break;
+    //     }
+    // }
+    // }
+
+
+    // ng-bind   数据绑定  只可以绑定在数据内部  只能绑定一个数据
+
+    // div ng-bind   = ‘name’
+    /***
+        ng-bind-template  可以把数据绑定在多个 可以绑定多个数据
+
+    ng-clock  防止闪烁
+    ng-non-bindable  ng-no-bindable    不解析指令标签所在的内部表达式
+    ng-no-bindable       不解析指令所在的标签内部表达式
+
+    ng-class = {'控制元素类名到的绑定'}
+    ng-class  true
+    // button  
+    ***/
+//   angular.module('myApp',[])
+//     .controller("demoCtrl",['$scope',function($scope){
+//         $scope.name = "zs";
+//         $scope.age = 18
+//     }])
+
+    // angular.module("myApp",[]).controller('demoCtrl',["$scope",function($scope){
+    //     $scope.isColor = true;
+    //     $scope.setColor = function(){
+    //         $scope.isColor = !$scope.isColor;
+    //     }
+    //     $scope.info = [
+    //         {
+	// 					name:'张三',
+	// 					age:18,
+	// 					job:'coder'
+	// 				},
+	// 				{
+	// 					name:'李四',
+	// 					age:28,
+	// 					job:'doctor'
+	// 				},
+	// 				{
+	// 					name:'王五',
+	// 					age:14,
+	// 					job:'student'
+	// 				}
+    //     ]
+    // }])
+</script>
+</body>
+</html>

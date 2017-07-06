@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hero - {{title}}</title>
+</head>
+
+<body>
+    <!-- 
+    表单同步提交
+      GET 提交
+      POST 提交
+        无文件的 POST 提交
+        有文件的 POST 提交
+          1. 请求方法必须 POST
+          2. 表单的 enctype 必须设置为 multipart/form-data
+   -->
+    <form action="add" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="">名称</label>
+            <input type="text" name="name" required>
+        </div>
+        <div>
+            <label for="">性别</label>
+            <input type="radio" name="gender" value="1" required> 男
+            <input type="radio" name="gender" value="0" required> 女
+        </div>
+        <div>
+            <label for="">头像</label>
+            <input type="file" name="avatar" required>
+        </div>
+        <div>
+            <input type="submit" value="保存">
+        </div>
+    </form>
+</body>
+
+</html>

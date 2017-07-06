@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="node_modules/angular/angular.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="demoCtrl">
+    <label for="#" ng-repeat="item in balls">
+      <input type="checkbox" ng-model = "item.isChecked" >{{ item.name }}
+    </label>
+
+    <input type="checkbox">
+    <br>
+    <br>
+
+    <br>
+    <button ng-click="submitData()">提交</button>
+    <div>选中的结果</div>
+    <ul>
+        <li ng-repeat="item in result"> {{item.name}} </li>
+    </ul>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <select ng-model="val" ng-options="item.value as item.name for item in balls"></select> {{ val }}
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <select ng-model="val" ng-options="item.value as item.name for item in balls"></select> {{ val }}
+    <!--
+  ng-options  循环生成下拉列表  需要配合ng-model  配合使用
+
+ item.name   for   
+ item.value as 
+
+ item.name  for 
+ item.value as 
+
+
+ item.value  for 
+ item.name as 
+
+ 
+item.name  for  拿到固定字段的name  属性
+item。value as   渠道循环字段的value
+
+-->
+    <!--<script>
+        // angular.module('myApp', [])
+        .controller("demoCtrl", ['$scope', function($scope) {
+            $scope.balls = [{
+                name: '足球',
+                isChecked: false
+            }, {
+                name: '篮球',
+                isChecked: false
+            }, {
+                name: '橄榄球',
+                isChecked: false
+            }, {
+                name: '排球',
+                isChecked: false
+            }, {
+                name: '乒乓球',
+                isChecked: false
+            }]
+
+            $scope.result = [];
+            $scope.submitData = function() {
+                $scope.result.length = 0;
+                for (var i = 0; i < $scope.balls.length; i++) {
+                    if ($scope.balls[i].isChecked) {
+                        // 就将当前的循环项添加到结果数组中
+                        $scope.result.push($scope.balls[i])
+
+                    }
+                }
+            }
+        }])
+    </script>-->
+
+
+    <script>
+        angular.module('myApp', [])
+            .controller("demoCtrl", ['$scope', function($scope) {
+                $scope.val = '003';
+                $scope.val = '003';
+                $scope.balls = [{
+                    name: 'lanqiu',
+                    value: "002"
+                }, {
+                    name: '足球',
+                    value: '002'
+                }, {
+                    name: '排球',
+                    value: '003'
+                }, {
+                    name: '乒乓球',
+                    value: '004'
+                }]
+            }])
+    </script>
+</body>
+
+</html>

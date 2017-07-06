@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body ng-app="myApp">
+    <nav class="navbar navbar-default" ng-controller="commonCtrl">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">movieCat</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ng-click="currentClass = 'in_theaters' " ng-class="{'active' : currentClass == 'in_theaters'}"><a href="#!/in_theaters/1">正在热映</a></li>
+                <li ng-click="currentClass = 'coming_soon' " ng-class="{'active': currentClass == 'coming_soon'}"><a href="#!/coming_soon/1">即将上映</a></li>
+                <li ng-click="currentClass = 'top250' " ng-class="{'active': currentClass == 'top250'}"><a href="#!/top250/1">Top250</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入搜索内容" ng-model="keyword">
+                </div>
+                <button type="button" class="btn btn-default" ng-click="searchData()">搜索</button>
+            </form>
+        </div>
+
+    </nav>
+    <div ng-view></div>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="in_theaters/in_theatersModuleCtrl.js"></script>
+
+</body>
+
+</html>

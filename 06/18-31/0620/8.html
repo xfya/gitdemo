@@ -1,0 +1,84 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/angular/angular.js"></script>
+
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController1">
+        {{username}}
+    </div>
+    <div ng-controller="myController2">
+        {{username}}
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller("myController1", function($scope, $http, $log) {
+            $scope.username = '小明'
+            console.log($http)
+
+        })
+
+        app.controller('myController2', ['$scope', function($scope) {
+            $scope.username = '小龙'
+        }])
+
+
+        /**
+            ng-show  
+
+            ng-if   
+
+            ng-epeat  便利数据
+            ng-repeat   
+        
+        ****/
+
+
+        var app = angular.module('myApp', []);
+        app.controller('myController', ['$scope', function($scope) {
+
+        }])
+    </script>
+</body>
+
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./node_modules/angular/angular.js"></script>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <p>{{timer}}</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+        // var app = angular.module('myApp', []);
+
+
+        app.controller("myCtrl", function($scope, $interval, $timeout) {
+            $scope.timer = new Date().getSeconds();
+        })
+
+        $timeout(function() {
+            $scope.timer = $scope.timer + 10
+        }, 3000)
+    </script>
+</body>
+
+</html>

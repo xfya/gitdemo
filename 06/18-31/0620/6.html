@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/angular/angular.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="mainController">
+    <input type="text" ng-model="val"><br>
+    <input type="button" ng-click="addBook()" value="添加元素">
+    <input type="button" ng-click="changeBook()" value="修改元素">
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller("mainController", ['$scope', function($scope) {
+            $scope.items = [{
+                name: 'java',
+                'learner': 'Tom',
+                age: 20
+            }, {
+                name: 'angular',
+                'learner': '黑马',
+                age: 12
+            }, {
+                name: 'nodejs',
+                'learner': '小龙',
+                age: 28
+            }, ]
+            $scope.$watch('val', function(newValue, oldValue) {
+                console.log(newValue, oldValue)
+            })
+            $scope.addBook = function() {
+                $scope.items.push({
+                    name: 'cordova',
+                    'learner': 'mimi',
+                    age: 30
+                })
+            }
+            $scope.$watchCollection('items', function(newValue, oldValue) {
+                console.log('books ....', newValue, oldValue)
+            })
+
+            console.log($scope.val)
+
+        }])
+    </script>
+
+</body>
+
+</html>

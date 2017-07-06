@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--引入第三方框架-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!--引入自己的css 文件-->
+    <link rel="stylesheet/less" type="text/less" href="css/base.less">
+    <link rel="stylesheet/less" type="text/less" href="css/baicaijia.less">
+    <!-- 编译less文件的js -->
+    <script src="lib/less/less.min.js"></script>
+</head>
+
+<body>
+    <!--header start  -->
+    <header id="header">
+        <div class="logo">
+            <a href="#"><img src="images/header_logo.png" alt=""></a>
+        </div>
+        <div class="app-download">
+            <a href="#"><img src="images/header_app.png" alt=""></a>
+        </div>
+    </header>
+    <!--header start  -->
+
+    <!--导航栏 start-->
+    <div id="wrapper" class="clearfix">
+        <ul class="clearfix baicaijia-title ul-wapper">
+
+        </ul>
+    </div>
+
+    <!--导航栏 end-->
+
+
+
+
+    <!--footer  start -->
+    <footer id="footer">
+        <div class="loginbox clearfix">
+            <div class="login">
+                <a href="#">登录</a>
+            </div>
+            <div class="resgiter">
+                <a href="#">注册</a>
+            </div>
+            <div class="goTop">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">
+                <a href="#">返回顶部</a>
+            </div>
+        </div>
+        <div class="login-bottom">
+            <p class="p-top">
+                <span>手机APP下载</span>
+                <span>慢慢买手机版</span>
+                <span> -- 掌上比价平台</span>
+            </p>
+            <p>
+
+                m.manmanbuy.com
+
+            </p>
+        </div>
+    </footer>
+    <!--fotter start  -->
+    <!--菜单展示模板  start-->
+    <script type="text/html" id="categoryTitleListTpl">
+        {{each result as value index}}
+        <li>
+            <a href="./productlist.html?category={{value.category}}&categoryid={{value.categoryId}}&pageid=1">{{value.category}}</a>
+        </li>
+        {{/each}}
+    </script>
+    <!--菜单展示模板  end-->
+
+
+    <!--categoryTitlTpl展示模板  start-->
+    <script type="text/html" id="baicaijiaTitleTpl">
+        {{each result as value index}}
+        <li data-titleid={{value.titleId}}>
+            <a href="#">
+
+                {{value.title}}
+            </a>
+
+        </li>
+
+
+        {{/each}}
+    </script>
+    <!--categoryTitlTpl列表展示模板  end-->
+
+    <!--引入js文件-->
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/template.js"></script>
+    <script src="js/url.js"></script>
+
+    <!--引入自己的js-->
+    <script src="js/baicaijia.js"></script>
+</body>
+
+</html>
+https://www.baidu.com/s?ie=utf-8&mod=11&isbd=1&isid=ACD08D1212420359&ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=%E4%BD%A0%E5%A5%BD&rsv_pq=d59563160000e7f0&rsv_t=e8215gKiA1kuGdc8U9UU%2B38LLxKaBn1kcm%2BwNRtYIPcaeVEZvdmVt25WDi0&rqlang=cn&rsv_enter=1&rsv_sug3=2&rsv_sid=23651_1420_21102_23632&_ss=1&clist=&hsug=&csor=2&pstg=5&_cr1=23733
+https://www.baidu.com/s?ie=utf-8&mod=11&isbd=1&isid=ACD08D1212412811&ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E5%8D%9A%E5%AD%A6%E8%B0%B7%20&oq=%25E5%258D%259A%25E5%25AD%25A6%25E8%25B0%25B7&rsv_pq=c061819b0000d3cb&rsv_t=1b9b4OqgPYF8w1s%2BkdjQDqY9FUpgWgux2pSMv3olCa8CX9YFvGBSd7%2FtLLg&rqlang=cn&rsv_enter=1&rsv_sug3=1&rsv_sug1=1&rsv_sug7=100&bs=%E5%8D%9A%E5%AD%A6%E8%B0%B7&rsv_sid=undefined&_ss=1&clist=&hsug=&csor=3&pstg=5&_cr1=30736

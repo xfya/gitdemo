@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <!--<input type="text" ng-model="val" ng-init="val='我是通过ng-init赋的初始值'">
+    <div> {{ val }} </div>
+    <button ng-click="val = '123'">button</button>
+    <hr>
+    <div> {{ 1+1 }} </div>
+    <hr>
+    <div> {{ 'angular' }} </div>
+    <hr>
+    <div> {{ 1==1 ? '相等' : '不相等' }} </div>-->
+    <!-- 1.引包 -->
+    <div class="slideBar" ng-controller="demoControllerr">
+        {{msg}} => {{hello}} ==>val ==>{{val}}
+        <button ng-click="clickFn()">button</button>
+        <input type="text" ng-model="val">
+
+    </div>
+
+    <div class="main" ng-controller="demoCtrlB">
+        {{ msg }}
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+</body>
+<script>
+    var myapp = angular.module("myApp", []);
+    myapp.controller("demoControllerr", function($scope) {
+        $scope.msg = "控制器中msg";
+        $scope.hello = 'hello world';
+        $scope.clickFn = function() {
+            alert('我是button')
+        }
+        $scope.val = '123'
+    })
+
+    myapp.controller('demoCtrlB', function($scope) {
+        $scope.msg = '我是demoCtrlB'
+    })
+</script>
+
+</html>

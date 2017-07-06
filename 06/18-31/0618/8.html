@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/angular/angular.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="demoCtrl">
+    <div>
+        <div ng-switch="tab">
+            <button ng-click="tab='1'">按钮1</button>
+            <button ng-click="tab='2'">按钮2</button>
+            <button ng-click="tab='3'">按钮3</button>
+            <div ng-switch-when="1">显示按钮1的内容</div>
+            <div ng-switch-when="2">显示按钮2的内容</div>
+            <div ng-switch-when="3">v ng-switch-when="2">显示按钮3的内容</div>
+        </div>
+
+    </div>
+    <script>
+        angular.module('myApp', [])
+
+        .controller('demoCtrl', ['$scope', function($scope) {
+
+            $scope.tab = 1;
+
+
+        }])
+    </script>
+</body>
+
+</html>

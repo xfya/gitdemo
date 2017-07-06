@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/angular/angular.js"></script>
+    <style>
+        [ng-cloak] {
+            display: none!important;
+        }
+        
+        .container {
+            width: 400px;
+            min-height: 400px;
+            height: auto;
+            margin: 100px auto;
+            background-color: #9acfea;
+            list-style: none;
+            position: relative;
+        }
+        
+        .students {
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #1b6d85;
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: all 2s;
+        }
+        
+        .large {
+            width: 250px;
+            height: 100px;
+        }
+        
+        .mycolor {
+            font-size: 33px;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+    <ul class="{{myClass}}">
+        <!-- myClass是个变量，在controller中赋值给已样式名 -->
+        控制大小：<input type="checkbox" ng-model="isLarge"> 控制控制颜色：
+        <input type="checkbox" ng-model="isColor">
+        <!--
+            1. key/value的方式添加样式, 可以添加多个样式
+        -->
+        <!--<li  ng-class="{  'students': true, 'large': isLarge, 'mycolor':isColor }" ng-repeat="stu in students">{{stu}}</li>-->
+
+        <!--
+            2. 字符串数组的方式
+            ng-class=”{匹配值1：样式1， 匹配值2： 样式2， …. }[匹配变量]”
+            当匹配变量与某个匹配值相等时就添加这个样式，同时将其他的样式移除，就是说，只能添加一个样式
+        -->
+        <li class="students" ng-class="{true:'large', false: 'mycolor'}[isLarge]" ng-repeat="stu in students">{{stu}}</li>-
+    </ul>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myController', ['$scope', function($scope) {
+            $scope.students = ['java', 'nodejs', 'anguarjs'];
+            $scope.myClass = 'container'
+        }])
+    </script>
+</body>
+
+</html>

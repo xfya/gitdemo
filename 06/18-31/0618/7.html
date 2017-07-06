@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+
+<!--<body ng-app="myApp" ng-controller="demoCtrl">
+
+    {{ name }}
+
+    <script>
+        angular.module('myApp', []).controller("demoCtrl", function($scope) {
+            $scope.name = "zs"
+        })
+    </script>
+</body>-->
+
+<body ng-app='myapp'>
+    <a href="#!/index">首页</a>
+    <a href="#!/list">列表页</a>
+    <div ng-view></div>
+    <script>
+        var myApp = angular.module('myapp', ["ngRoute"]);
+        myApp.config(function($routeProvider) {
+            $routeProvider
+                .when('/index', {
+                    templateUrl: "./a.html",
+                    controller: "indexCtrl"
+                })
+                .when('/list', {
+                    templateUrl: "./b.html",
+                    controller: "listCtrl"
+                })
+        })
+
+        myApp.controller("indexCtrl", function($scope) {
+            $scope.msg = "我是首页的msg fsdf"
+        })
+        myApp.controller("listCtrl", function($scope) {
+            $scope.msg = '我是列表页的msg sffsd'
+        })
+    </script>
+</body>
+
+</html>

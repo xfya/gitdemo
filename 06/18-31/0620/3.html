@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<!--<body ng-app="myApp" ng-controller="demoCtrl">
+
+    <!--
+		ng-switch    类似原声JS中的switch 
+
+		ng-switch-when 类似原声JS中的case
+	-->
+
+<div ng-switch="tab">
+    <button ng-click="tab='1'">按钮1</button>
+    <button ng-click="tab='2'">按钮2</button>
+    <button ng-click="tab='3'">按钮3</button>
+    <div ng-switch-when="1">显示按钮1的内容</div>
+    <div ng-switch-when="2">显示按钮2的内容</div>
+    <div ng-switch-when="3">显示按钮3的内容</div>
+</div>
+
+
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    angular.module('myApp', [])
+
+    .controller('demoCtrl', ['$scope', function($scope) {
+
+        $scope.tab = 1;
+
+
+    }])
+</script>
+</body>-->
+
+</html>
